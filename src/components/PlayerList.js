@@ -3,6 +3,7 @@ import { Consumer } from './Context';
 import Player from './Player';
 
 const PlayerList = () => {
+
   return (
     <Consumer>
       { context => (
@@ -11,7 +12,7 @@ const PlayerList = () => {
             <Player 
               {...player}
               key={player.id.toString()} 
-              index={index}         
+              index={index}
             />
           )}
         </React.Fragment>
@@ -19,5 +20,6 @@ const PlayerList = () => {
     </Consumer>
   );
 }
+
 
 export default PlayerList;

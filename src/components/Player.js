@@ -2,15 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Consumer } from './Context';
 import Counter from './Counter';
-import Icon from "./Icon";
+import Icon from './Icon';  
 
 class Player extends PureComponent {
+
+  isHighest = () => {
+    const highScore = this.state.players.map(Math.max(score) => {
+    )
+
 
   static propTypes = {
     name: PropTypes.string.isRequired,
     score: PropTypes.number.isRequired,
     id: PropTypes.number.isRequired,
-    index: PropTypes.number.isRequired
+    index: PropTypes.number.isRequired,
+    isHighScore: PropTypes.bool
   };
 
   render() {
