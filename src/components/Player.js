@@ -6,15 +6,12 @@ import Icon from './Icon';
 
 class Player extends PureComponent {
 
-  isHighest = () => {
-    const highScore = this.state.players.map(Math.max(score) => {
-    )
+  // isHighest = () => {
+  //   const highScore = this.state.players.map(Math.max(score) => {
+  //   )
 
 
   static propTypes = {
-    name: PropTypes.string.isRequired,
-    score: PropTypes.number.isRequired,
-    id: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
     isHighScore: PropTypes.bool
   };
@@ -22,26 +19,22 @@ class Player extends PureComponent {
   render() {
     
     const { 
-      name,
-      id,
-      score,
       index
     } = this.props;
 
     return (
       <div className="player">
         <Consumer>
-          { context => (
+          { ({ actions }) => (
             <span className="player-name">
-              <button className="remove-player" onClick={() => context.actions.removePlayer(id)}>✖</button>
+              <button className="remove-player" onClick={() => actions.removePlayer(players[index].id)}>✖</button>
               <Icon />
-              { name }
+              { players[index].name }
             </span> 
           )}
         </Consumer>
   
         <Counter 
-          score={score}
           index={index}
         />
       </div>

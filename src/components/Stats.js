@@ -4,7 +4,7 @@ import { Consumer } from './Context';
 const Stats = () => {
   return (
     <Consumer>
-      { context => {
+      { ({context}) => {
         const totalPlayers = context.players.length;
         const totalPoints = context.players.reduce( (total, player) => {
           return total + player.score;
